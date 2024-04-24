@@ -18,6 +18,7 @@ Este é um projeto de galeria espacial desenvolvido em Django. Permite aos usuá
 ## Instalação
 
 1. Clone o repositório:
+
    git clone https://github.com/renatocoo/django_estudos
    
 3. Instale as dependências:
@@ -26,7 +27,7 @@ Este é um projeto de galeria espacial desenvolvido em Django. Permite aos usuá
 
 3. Execute as migrações do Django:
 
-  python manage.py migrateUso
+  python manage.py migrate
 
 4. Inicie o servidor de desenvolvimento:
 
