@@ -1,6 +1,6 @@
 # Galeria Espacial
 
-Este é um projeto de galeria espacial desenvolvido em Django. Permite aos usuários visualizarem e compartilharem imagens do espaço sideral.
+Este é um projeto de galeria espacial desenvolvido em Django. Permite aos usuários visualizarem e compartilharem imagens do espaço.
 
 ## Funcionalidades
 
