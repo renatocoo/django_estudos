@@ -1,6 +1,39 @@
 {% extends 'galeria/base.html' %}
 {% load static %}
 {% block content %}
+    <style>
+        .botao-login,
+        .botao-registro,
+        .botao-logout {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .botao-login:hover,
+        .botao-registro:hover,
+        .botao-logout:hover {
+            background-color: #45a049;
+        }
+
+        .mensagem-autenticacao {
+            color: rgb(255, 0, 0);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-bemvindo {
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
@@ -9,6 +42,16 @@
                     <input class="busca__input" type="text" placeholder="O que você procura?">
                     <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
                 </div>
+            </div>
+            <div class="cabecalho__botoes">
+                {% if user.is_authenticated %}
+                <p class="mensagem-bemvindo">Bem-vindo, {{ user.username }}!</p>
+                <a href="{% url 'logout' %}" class="botao-logout">Logout</a>
+                {% else %}
+                <p class="mensagem-autenticacao">Você não está autenticado!</p>
+                <a href="{% url 'login' %}" class="botao-login">Logar</a>
+                <a href="{% url 'register' %}" class="botao-registro">Registrar</a>
+                {% endif %}
             </div>
         </header>
         <main class="principal">
@@ -53,8 +96,8 @@
                                         </span>
                                     </div>
                                 </div>
-                                {% endfor %}
                             </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </section>
@@ -63,10 +106,10 @@
     </div>
     <footer class="rodape">
         <div class="rodape__icones">
-            <a href="https://twitter.com/AluraOnline" target=”_blank” >
+            <a href="https://twitter.com/AluraOnline" target="_blank" >
                 <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter">
             </a>
-            <a href="https://www.instagram.com/aluraonline/" target=”_blank” >
+            <a href="https://www.instagram.com/aluraonline/" target="_blank" >
                 <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram">
             </a>
         </div>

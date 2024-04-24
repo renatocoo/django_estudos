@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path, os
 from dotenv import load_dotenv
 
+LOGIN_REDIRECT_URL = '/home/'
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,7 +83,7 @@ WSGI_APPLICATION = "setup.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "bancodedados.sqlite3",
     }
 }
 

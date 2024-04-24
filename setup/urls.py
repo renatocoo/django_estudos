@@ -16,8 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
+from .views import register, logout_view
+from galeria import views  # Importando views do aplicativo galeria
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
+    path('', auth_views.LoginView.as_view(template_name='galeria/login.html'), name='login'),
     path("admin/", admin.site.urls),
-    path("", include('galeria.urls')),
+    path("home/", include('galeria.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name='galeria/login.html'), name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('registro/', register, name='register'),
 ]
+
