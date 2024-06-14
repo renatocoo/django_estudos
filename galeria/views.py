@@ -5,10 +5,10 @@ from .forms import AtividadeForm
 
 def index(request):
     dados = {
-    1: {'nome': 'Nebulosa de Carina',
-        'legenda': 'webbtelescope/NASA'},
-    2: {'nome': 'galaxia ngc159',
-        'legenda': 'webbtelescope/NASA'}
+    1: {'nome': 'Dev Ops',
+        'legenda': 'BDO/SEM5'},
+    2: {'nome': 'Redes',
+        'legenda': 'RDS/SEM4'}
 }
     return render(request, 'galeria/index.html', {"cards" : dados})
 
