@@ -1,4 +1,4 @@
-# SMS (School Manage Sistem)
+# SMS (School Manage System)
 
 Este é um projeto de um AVA (Ambiente Virtual de Aprendizado) desenvolvido em Django. Permite aos usuários visualizarem matérias e compartilharem conhecimetno.
 
