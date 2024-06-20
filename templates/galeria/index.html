@@ -10,7 +10,7 @@
             margin: 0 10px;
             border: none;
             border-radius: 5px;
-            background-color: #4caf50;
+            background-color: #535553;
             color: white;
             text-decoration: none;
             cursor: pointer;
@@ -19,7 +19,7 @@
         .botao-login:hover,
         .botao-registro:hover,
         .botao-logout:hover {
-            background-color: #45a049;
+            background-color: #373737;
         }
 
         .mensagem-autenticacao {
@@ -33,10 +33,22 @@
             font-size: 14px;
             margin-bottom: 10px;
         }
+        
+/* styles.css */
+.titulo {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em; 
+    font-weight: bold;
+    color: #333; 
+    text-align: center;
+    margin: 20px 0; 
+    letter-spacing: 1.5px;
+}
+
     </style>
     <div class="pagina-inicial">
         <header class="cabecalho">
-            <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
+            <h1 class="titulo">GiovaniLearning</h1>
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
                     <input class="busca__input" type="text" placeholder="O que você procura?">
@@ -57,36 +69,34 @@
         <main class="principal">
             <section class="menu-lateral">
                 <nav class="menu-lateral__navegacao">
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Novas</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> surpreenda-me</a>
+                    <a href="#"><img src="{% static '/assets/ícones/1x/casa-icone.png' %}" width="24" height="24"> Home</a>
+                    <a href="#"><img src="{% static '/assets/ícones/1x/coracao-icone.png' %}" width="24" height="24"> Matérias favoritas</a>
+                    <a href="#"><img src="{% static '/assets/ícones/1x/forum-icone.png' %}" width="24" height="24"> Forum</a>
+                    <a href="#"><img src="{% static '/assets/ícones/1x/chapeu-icone.png' %}" width="24" height="24"> Sobre Nós</a> 
                 </nav>
             </section>
             <section class="conteudo">
                 <section class="banner">
-                    <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
-                    <h1 class="banner__titulo"> A galeria mais completa de fotos do espaço!</h1>
+                    <h1 class="banner__titulo"> Últimas notícias</h1>
+                    <img class="banner__imagem" src="{% static '/assets/imagens/Greve-foto.jpg' %}" alt="banner Alura Space" style="border-radius: 50px;">
                 </section>
                 <section class="tags">
                     <p class="tags__titulo">Busque por tags:</p>
                     <ul class="tags__lista">
-                        <li class="tags__tag">Nebulosa</li>
-                        <li class="tags__tag">Estrela</li>
-                        <li class="tags__tag">Galáxia</li>
-                        <li class="tags__tag">Planeta</li>
+                        <li class="tags__tag">Dev-Ops</li>
+                        <li class="tags__tag">Front-End</li>
+                        <li class="tags__tag">Redes</li>
                     </ul>
                 </section>
                 <section class="galeria">
                     <div class="cards">
-                        <h2 class="cards__titulo">Navegue pela galeria</h2>
+                        <h2 class="cards__titulo">Navegue pelas matérias</h2>
                         <ul class="cards__lista">
                             {% for foto_id, info in cards.items %}
                             <li class="card">
                                 <a href="{% url 'imagem' %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
                                 </a>
-                                <span class="card__tag">Estrelas</span>
                                 <div class="card__info">
                                     <p class="card__titulo">{{ info.nome }}</p>
                                     <div class="card__texto">
@@ -106,13 +116,13 @@
     </div>
     <footer class="rodape">
         <div class="rodape__icones">
-            <a href="https://twitter.com/AluraOnline" target="_blank" >
+            <a href="https://x.com/ifspguarulhos" target="_blank" >
                 <img src="{% static '/assets/ícones/1x/twitter.png' %}" alt="ícone twitter">
             </a>
-            <a href="https://www.instagram.com/aluraonline/" target="_blank" >
+            <a href="https://www.instagram.com/ifspgru/" target="_blank" >
                 <img src="{% static '/assets/ícones/1x/instagram.png' %}" alt="ícone instagram">
             </a>
         </div>
-        <p class="rodape__texto">Desenvolvido por Alura</p>
+        <p class="rodape__texto">Instituto Federal de São Paulo</p>
     </footer>
 {% endblock %}
