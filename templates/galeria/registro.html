@@ -1,136 +1,23 @@
+{% extends 'galeria/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiovaniLearning</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #eeeeee;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            display: flex;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 900px; /* Ajuste conforme necessário */
-        }
-        .left-side {
-            background-color: #f4f4f4;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-        }
-        .left-side img {
-            max-width: 100%;
-            height: auto;
-        }
-        .left-side h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .left-side p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: grey;
-            text-align: center;
-        }
-        .right-side {
-            padding: 40px;
-            width: 50%;
-        }
-        .right-side h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .right-side form {
-            display: flex;
-            flex-direction: column;
-        }
-        .right-side input[type="text"],
-        .right-side input[type="email"],
-        .right-side input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .right-side button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            background-color: #686d76;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .right-side button:hover {
-            background-color: #373a40;
-        }
-        .right-side .social-login {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .right-side .social-login button {
-            width: 48%;
-            padding: 10px;
-            background-color: #db4437; /* Google color */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .right-side .social-login button:nth-child(2) {
-            background-color: #007bff; /* SUAP color */
-        }
-        .right-side .social-login button:hover {
-            opacity: 0.9;
-        }
-        .helptext, .errorlist {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="left-side">
-            <img src="{% static '/assets/ícones/chapeu-icone.png' %}" width="250px" alt="Recursos educativos">
-            <h1>Explore os recursos educacionais</h1>
-            <p>Salas de estudo e muito mais!</p>
-            <p>Impulsione seu aprendizado.</p>
-        </div>
-        <div class="right-side">
-            <h2>Se junte à nossa comunidade</h2>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Criar</button>
-                <a href="{% url 'login' %}">
-                    <button type="button">Já tenho conta</button>
-                </a>
-            </form>
-            </div>
-        </div>
+{% block content %}
+<div class="container">
+    <div class="left-side">
+        <img src="{% static 'assets/ícones/chapeu-icone.png' %}" width="250px" alt="Recursos educativos">
+        <h1>Explore os recursos educacionais</h1>
+        <p>Salas de estudo e muito mais!</p>
+        <p>Impulsione seu aprendizado.</p>
     </div>
-</body>
-</html>
+    <div class="right-side">
+        <h2>Se junte à nossa comunidade</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Criar</button>
+            <a href="{% url 'login' %}">
+                <button type="button">Já tenho conta</button>
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

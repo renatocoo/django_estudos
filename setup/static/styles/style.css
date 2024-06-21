@@ -1,4 +1,4 @@
-/* CSS Reset */
+/* Reset de CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,7 +20,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
+/* Reset de papéis de exibição HTML5 para navegadores mais antigos */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
@@ -31,9 +31,10 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     min-height: 100vh;
     background: linear-gradient(#EEEEEE, #eeeeee);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 ol, ul {
@@ -55,7 +56,31 @@ table {
     border-spacing: 0;
 }
 
-/* Styles for the banner section */
+/* Estilos gerais */
+.pagina-inicial {
+    max-width: 1440px;
+    padding: 1.5rem;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.principal {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.titulo {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 1.5px;
+}
+
+/* Estilos para a seção de banner */
 .banner {
     width: auto;
     position: relative;
@@ -69,20 +94,20 @@ table {
 }
 
 .banner__titulo-container {
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 10px; /* Adiciona um espaço entre o título e a imagem */
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .banner__titulo {
     color: #000000;
     font-size: 40px;
-    background: rgba(255, 255, 255, 0.7); /* Adiciona um fundo semi-transparente */
-    border-radius: 10px; /* Adiciona borda arredondada */
-    display: inline-block; /* Permite que o background se ajuste ao texto */
-    padding: 10px 20px; /* Adiciona padding ao texto */
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 20px;
 }
 
-/* Header styles */
+/* Estilos para o cabeçalho */
 .cabecalho {
     align-items: center;
     display: flex;
@@ -121,7 +146,7 @@ table {
     height: 2rem;
 }
 
-/* Card styles */
+/* Estilos para os cartões */
 .cards {
     width: 100%;
 }
@@ -173,7 +198,7 @@ table {
     margin-top: 0.8em;
 }
 
-/* Sidebar menu styles */
+/* Estilos para o menu lateral */
 .menu-lateral {
     padding-right: 1.5rem;
     box-sizing: border-box;
@@ -203,7 +228,7 @@ table {
     margin-right: 1.5rem;
 }
 
-/* Footer styles */
+/* Estilos para o rodapé */
 .rodape {
     background-color: #686d76;
     width: 100%;
@@ -211,6 +236,8 @@ table {
     display: flex;
     justify-content: space-between;
     color: #EEEEEE;
+    margin-top: auto;
+    box-sizing: border-box;
 }
 
 .rodape__icones {
@@ -223,7 +250,7 @@ table {
     font-size: 1.1rem;
 }
 
-/* Tag styles */
+/* Estilos para as tags */
 .tags {
     padding: 1.5rem 0;
     display: flex;
@@ -256,61 +283,115 @@ table {
     border: 2px solid #686d76;
 }
 
-/* General styles */
-.pagina-inicial {
-    max-width: 1440px;
-    padding: 1.5rem;
-    margin: 0 auto;
-}
-
-.principal {
+/* Estilos para as páginas de login e registro */
+.auth-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
-/* Authentication and button styles */
-.botao-login,
-.botao-registro,
-.botao-logout {
-    padding: 10px 20px;
-    margin: 0 10px;
+.container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 900px;
+    margin: 20px;
+}
+
+.left-side {
+    background-color: #f4f4f4;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.left-side img {
+    max-width: 100%;
+    height: auto;
+}
+
+.left-side h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.left-side p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: grey;
+    text-align: center;
+}
+
+.right-side {
+    padding: 40px;
+    width: 50%;
+}
+
+.right-side h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.right-side form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side input[type="text"],
+.right-side input[type="email"],
+.right-side input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.right-side button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #686d76;
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #535553;
-    color: white;
-    text-decoration: none;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.botao-login:hover,
-.botao-registro:hover,
-.botao-logout:hover {
-    background-color: #373737;
+.right-side button:hover {
+    background-color: #373a40;
 }
 
-.mensagem-autenticacao {
-    color: rgb(255, 0, 0);
-    font-size: 14px;
-    margin-bottom: 10px;
+.right-side .social-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-.mensagem-bemvindo {
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    margin-bottom: 10px;
+.right-side .social-login button:hover {
+    opacity: 0.9;
 }
 
-.titulo {
-    font-family: 'Arial', sans-serif;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin: 20px 0;
-    letter-spacing: 1.5px;
+.helptext, .errorlist {
+    display: none;
 }
 
-/* Styles for imagem.html page */
+.p {
+    color: grey;
+}
+
+/* Estilos para a página de imagem */
 .imagem__conteudo {
     display: flex;
     flex-direction: column;
@@ -350,12 +431,39 @@ table {
     color: #333;
 }
 
-/* Specific adjustment for image page header */
-.cabecalho img {
-    margin-right: 20px;
+/* Estilos para os botões de autenticação */
+.botao-login,
+.botao-registro,
+.botao-logout {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #686d76;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.cabecalho__busca {
-    flex-grow: 1;
-    max-width: 400px;
+.botao-login:hover,
+.botao-registro:hover,
+.botao-logout:hover {
+    background-color: #373a40;
+    transform: scale(1.05);
+}
+
+.mensagem-autenticacao {
+    color: rgb(255, 0, 0);
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.mensagem-bemvindo {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
 }
