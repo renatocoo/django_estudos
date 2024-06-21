@@ -1,9 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-
+/* CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,11 +19,13 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
@@ -38,41 +35,55 @@ body {
     background-position: center;
     background-size: cover;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
+/* Styles for the banner section */
+/* Styles for the banner section */
 .banner {
     width: auto;
     position: relative;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .banner__imagem {
     width: 100%;
+    border-radius: 50px;
+}
+
+.banner__titulo-container {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 10px; /* Adiciona um espaço entre o título e a imagem */
 }
 
 .banner__titulo {
     color: #000000;
     font-size: 40px;
-    width: 350px;
-    line-height: 50px;
-    top: 80px;
-    left: 80px;
+    background: rgba(255, 255, 255, 0.7); /* Adiciona um fundo semi-transparente */
+    border-radius: 10px; /* Adiciona borda arredondada */
+    display: inline-block; /* Permite que o background se ajuste ao texto */
+    padding: 10px 20px; /* Adiciona padding ao texto */
 }
 
+/* Header styles */
 .cabecalho {
     align-items: center;
     display: flex;
@@ -83,12 +94,9 @@ table {
 .cabecalho__busca {
     align-items: center;
     border-radius: 10px;
-    background: linear-gradient(45deg, #eeeeee,#fefffe);
+    background: linear-gradient(45deg, #eeeeee, #fefffe);
     display: flex;
-    height: auto;
-    justify-content: space-between;
     padding: 2px;
-    width: auto; 
 }
 
 .busca__fundo {
@@ -96,12 +104,10 @@ table {
     background-color: #686d76;
     border-radius: 8px;
     display: flex;
-    margin: 0 auto;
     width: 100%;
 }
 
 .busca__input {
-    align-items: center;
     background-color: transparent;
     border: none;
     font-size: 1rem;
@@ -116,6 +122,7 @@ table {
     height: 2rem;
 }
 
+/* Card styles */
 .cards {
     width: 100%;
 }
@@ -127,39 +134,23 @@ table {
     margin-bottom: 1.5rem;
 }
 
-.cards__lista{
+.cards__lista {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: space-between;
 }
 
 .card {
     border-radius: 10px;
     box-shadow: 0px 10px 10px #00000050;
     color: #000000;
-    margin-bottom: 1rem; /* Reduzindo a margem inferior para 1rem */
-    position: relative;
-    width: calc(47% - 0.5rem); /* Utilizando 50% do espaço e subtraindo 0.5rem para o espaçamento entre os cards */
+    margin-bottom: 1rem;
+    width: calc(47% - 0.5rem);
 }
 
 .card__imagem {
-    width: 100%; /* Definindo a largura da imagem como 100% para preencher a largura do card */
+    width: 100%;
     border-radius: 10px 10px 0 0;
-}
-
-.card__tag {
-    background-color: #D9D9D940;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    font-size: 1.2rem;
-    left: 310px;
-    margin-right: 1.5rem;
-    padding: .5rem .5rem;
-    position: absolute;
-    text-align: center;
-    top: 20px;
-    width: 100px;
 }
 
 .card__info {
@@ -169,7 +160,6 @@ table {
 
 .card__titulo {
     font-weight: bold;
-    line-height: 1.2rem;
     margin-top: 0.8em;
 }
 
@@ -179,70 +169,12 @@ table {
     flex-wrap: wrap;
 }
 
-.card__texto img {
-    cursor: pointer;
-}
-
 .card__descricao {
     font-size: 0.6em;
     margin-top: 0.8em;
 }
 
-.galeria {
-    display: flex;
-    width: 100%;
-}
-
-
-.imagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.imagem__conteudo {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px 20px 0 0;
-    width: 950px;
-}
-
-.imagem__imagem {
-    width: 100%;
-    border-radius: 20px;
-}
-
-.imagem__info {
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-.imagem__texto {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #000000;
-    margin-top: 0.5rem;
-}
-
-.imagem__titulo {
-    font-weight: bold;
-    line-height: 2rem;
-    color: #000000;
-}
-
-.imagem__texto {
-    font-size: 1rem;
-}
-
-.imagem__descricao {
-    font-size: 0.7rem;
-}
-
+/* Sidebar menu styles */
 .menu-lateral {
     padding-right: 1.5rem;
     box-sizing: border-box;
@@ -266,79 +198,20 @@ table {
 
 .menu-lateral__navegacao a:first-child {
     font-weight: bold;
-    color: #000000;
 }
 
 .menu-lateral__navegacao img {
     margin-right: 1.5rem;
 }
 
-.pagina-inicial {
-    max-width: 1440px;
-    padding: 1.5rem;
-    margin: 0 auto;
-}
-
-.populares {
-    margin-left: 1.5rem;
-}
-
-.populares__titulo {
-    font-size: 2rem;
-    color: #000000;
-    line-height: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.populares__imagens {
-    display: flex;
-    flex-direction: column;
-}
-
-.populares__imagem {
-    margin-bottom: 1.5rem;
-}
-
-.populares__botao {
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #686d76,#b3b3bb);
-    padding: 2px;
-    box-sizing: border-box;
-}
-
-.populares__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    text-decoration: none;
-    color: #FFFFFF;
-    background-color: #082D5C;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    transition: .5s;
-}
-
-.populares__link:hover {
-    background: transparent;
-}
-
-.principal {
-    display: flex;
-    justify-content: space-between;
-}
-
+/* Footer styles */
 .rodape {
     background-color: #686d76;
     width: 100%;
     padding: 1.5rem 3rem;
-    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    color: #EEEeEE;
+    color: #EEEEEE;
 }
 
 .rodape__icones {
@@ -351,6 +224,7 @@ table {
     font-size: 1.1rem;
 }
 
+/* Tag styles */
 .tags {
     padding: 1.5rem 0;
     display: flex;
@@ -364,7 +238,6 @@ table {
 }
 
 .tags__lista {
-    color: #eeeeee;
     display: flex;
 }
 
@@ -376,9 +249,63 @@ table {
     width: 100px;
     text-align: center;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .tags__tag:hover {
     border: 2px solid #686d76;
+}
+
+/* General styles */
+.pagina-inicial {
+    max-width: 1440px;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.principal {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Authentication and button styles */
+.botao-login,
+.botao-registro,
+.botao-logout {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #535553;
+    color: white;
+    text-decoration: none;
     cursor: pointer;
+}
+
+.botao-login:hover,
+.botao-registro:hover,
+.botao-logout:hover {
+    background-color: #373737;
+}
+
+.mensagem-autenticacao {
+    color: rgb(255, 0, 0);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.mensagem-bemvindo {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.titulo {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 1.5px;
 }
