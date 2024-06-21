@@ -13,9 +13,11 @@
         <div class="cabecalho__botoes">
             {% if user.is_authenticated %}
             <p class="mensagem-bemvindo">Bem-vindo, {{ user.username }}!</p>
+            <br>
             <a href="{% url 'logout' %}" class="botao-logout">Logout</a>
             {% else %}
             <p class="mensagem-autenticacao">Você não está autenticado!</p>
+            <br>
             <a href="{% url 'login' %}" class="botao-login">Logar</a>
             <a href="{% url 'register' %}" class="botao-registro">Registrar</a>
             {% endif %}
